@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang=“en”>
+    <head>
+        <meta charset=“UTF-8”>
+        <script>alert("Welcome to MIMS");</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <style>
+            body{
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+        .container {
+            width: 350px;
+            background-color: #f2cfcf;
+            padding: 30px;
+            margin: 100px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .title {
+            text-align: center;
+            margin-bottom: 20px;
+            color: brown;
+        }
+        .description {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 14px;
+        }.form {
+            width: 100%;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+        .submit-button{
+            background-color: brown;
+            color: yellow;
+            border: 2px;
+            border-radius: 5px;
+            padding:10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .sign-up-button:hover {
+            background-color:brown;
+        }
+        .info {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .terms {
+            font-size: 12px;
+            color: #4267b2;
+            text-align: center;
+            margin-top: 20px;
+        }
+        h1,h2{color: black;
+            text-align: center;
+        }
+        h1.custim-h1{
+            font-size: 56px;
+        }
+
+        h1
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+                 overflow:	hidden;
+        background-color: #f2cfcf;
+        }
+        li {
+                 float:	left;
+        }
+        li a {
+        display: block;
+        color: orange;
+        padding: 12px 15px;
+        }
+        li a:hover {
+        background-color: black;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+        }
+        
+        .doctor-dropdown {
+            width: 100%;
+            height: 100%;
+            padding:10px 20px;
+            border: 1px solid black;
+            font-size: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style for the dropdown arrow */
+        .doctor-dropdown select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: brown;
+            
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: url('arrow-down.png') no-repeat right center;
+            padding-right: 10px; /* Add space for the arrow */
+        }
+        .doctor-dropdown-container {
+            display: flex;
+            align-items: center;
+            }
+
+        .doctor-dropdown {
+            flex: 1;
+            display: flex;
+            align-items: center;
+         }
+         .tabs {
+			display: flex;
+			border: 1px solid white;
+			border-bottom: none;
+		}
+		
+		.tab {
+			flex: 1;
+			padding: 10px;
+			text-align: center;
+			background-color:#f2cfcf;
+			cursor: pointer;
+		}
+		
+		.tab:hover {
+			background-color: white;
+		}
+		
+		.content {
+			display: none;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-top: none;
+		}
+		
+		#about-us-content {
+			display: block;
+		}
+        
+        #background-image{
+            background-image: url('https://plus.unsplash.com/premium_photo-1675686363504-ba2df7786f16?q=80&w=1791&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: 0.45;
+        }
+
+        </style>
+       </head>
+       <body>
+        <div id = "background-image"></div>
+        
+        <h1 class="custim-h1"><a href ="file:///D:/myproject/Webdevelopment/MIMS.html">MIMS</a></h1>
+        <h2>Marvel Institute of Medical Sciences</h2>
+        <br><br>
+        <ul id="sectionTabs">
+         
+        <div class="tabs">
+            <li><a id = "home-tab" class=“active” href=“file:///D:/myproject/Webdevelopment/MIMS.html” onclick="window.location.reload();">Home</a></li>
+            <div id="about-us-tab" class="tab" onclick="showContent('about-us')">About Us</div>
+            <div id="department-tab" class="tab" onclick="showContent('department')">Department</div>
+            <div id="facilities-tab" class="tab" onclick="showContent('facilities')">Facilities</div>
+            <div id="locations-tab" class="tab" onclick="showContent('locations')">Locations</div>
+            <div id="contacts-tab" class="tab" onclick="showContent('contacts')">Contacts</div>
+            <div id="services-tab" class="tab" onclick="showContent('services')">Services</div>
+        </div>
+        
+            <div id="about-us-content" class="content">
+                
+                <h4>MIIMS was created in 1956 to serve as a nucleus for nurturing excellence in all aspects of health care</h4>
+                <p>
+                    Creating a country imbued with a scientific culture was Jawaharlal Nehru's dream, and immediately after independence he prepared a grand design to achieve it. Among the temples of modern India which he designed, was a centre of excellence in the medical sciences. Nehru's dream was that such a centre would set the pace for medical education and research in Southeast Asia , and in this he had the wholehearted support of his Health Minister, Rajkumari Amrit Kaur.
+                    
+                    The health survey and development committee ,chaired by Sir Joseph Bhore, an Indian Civil Servant ,had in 1946 already recommended the establishment of a national medical centre which would concentrate on meeting the need for highly qualified manpower to look after the nation's expanding health care activities . The dreams of Nehru and Amrit Kaur and the recommendations of the Bhore Committee converged to create a proposal which found favor with the government of New Zealand. A generous grant from New Zealand under the Colombo Plan made it possible to lay the foundation stone of Marval Institute of Medical Sciences (MIMS) in 1952.The MIMS was finally created in 1956,as an autonomous institution through an Act of Parliament ,to serve as a nucleus for nurturing excellence in all aspect of health care.</p>
+            </div>
+            
+            <div id="department-content" class="content">
+                <h2>Department</h2>
+                <h4>Anaesthesiology, Pain Medicine and Critical Care<br> Anatomy <br> Academic Section<br>Biochemistry <br>Biomedical Engineering <br>Biotechnology <br> Cardiology <br> Cardiothoracic & Vascular Surgery (CTVS) <br>College of Nursing <br> Dermatology & Venereology <br> Endocrinology, Metabolism & Diabetes</h4>
+            </div>
+            
+            <div id="facilities-content" class="content">
+                <h2>Facilities</h2>
+                <p>AC Suite rooms<br>
+                    General warden<br>
+                    Health Checkup<br>
+                    Food & Dietary Services<br>
+                    Special General Ward<br>
+                    Special Nurse<br>
+                    Travel Desk<br>
+                    24x7 Ambulance services<br>
+                    Guest Lounge<br>
+                    Hygiene canteen<br>
+                    ATM service<br>
+                    Babycare center<br>
+                    Visitor restrooms</p>
+            </div>
+            
+            <div id="locations-content" class="content">
+                <h2>Locations</h2>
+                <p>Delhi <br> Chennai <br>Hyderabad <br> Mumbai <br> Bhubaneshwar</p>
+            </div>
+            
+            <div id="contacts-content" class="content">
+                <h2>Contacts</h2>
+                <p><u>MIMS@gmail.com</u> <br> 123456789 <br> 678901234 </p>
+            </div>
+            
+            <div id="services-content" class="content">
+                <h2><u>Our Patient Care</u></h2>
+                <p>Medicine Out-patient Department (Location: A & B Wing, 2nd floor, New Rajkumari OPD block)<br>
+
+                    Unit 1 - Monday and Thursday<br>
+                    
+                    Unit 2 - Tuesday and Friday<br>
+                    
+                    Unit 3 - Wednesday and Saturday<br>
+                    
+                    Registration timing: 8:30am-11:00am<br>
+                    
+                    How to Book OPD Appointment<br>
+                    
+                    If you are a new patient- <u><b>Check book for appointment below</b></u><br>
+                    
+                    Special Clinics (Location - A and B wing , 2nd Floor New RAK OPD)<br>
+                    
+                     
+                    
+                    Infectious Disease travel health and adult immunization Clinic - Every Monday and Thursday (2:00PM)<br>
+                    
+                    Sleep Clinic - Every Monday (2:00 PM)<br>
+                    
+                    Obesity and Metabolic Clinic - Every Wednesday (2:00PM)<br>
+                    
+                    Chest clinic - Every Friday (2:00PM)<br>
+                    
+                    Registration time (2:00PM to 3:00PM)</p>
+            </div>
+                 
+        </ul>
+        
+        
+        <div class="container">
+            <h1 class="title">Book an appointment</h1>
+           
+            <form class="form">
+                
+                <input class="input" type="text" placeholder="Patient's Name">
+                <input class="input" type="text" placeholder="Contact number">
+                <div class="doctor-dropdown-container">
+                    <div class="doctor-dropdown">
+                        <label for="doctors">Select a doctor:</label>
+                        <select id="doctors" name="doctors">
+                            <option value="Dr.Subash gupta">Dr.Subash gupta</option>
+                            <option value="Dr.YK Mishra">Dr.YK Mishra</option>
+                            <option value="Dr.Aditya Gupta">Dr.Aditya Gupta</option>
+                            <option value="Dr.Naresh Trehan">Dr.Naresh Trehan</option>
+                            <option value="Dr.Sudhir Tyagi">Dr.Sudhir Tyagi</option>
+                            <option value="Dr.H.S.Chhabra">Dr.H.S.Chhabra</option>
+                        </select>
+                    </div>
+                </div>
+                <label for="dateInput">Select a Date:</label>
+                <input type="date" id="Available slot">
+                <br>
+                <button class="submit-button">submit</button>
+                <br>
+                <div class="policy-text">
+                    By submitting, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a>.
+                </div>
+            </form>
+        </div>
+
+        <script>
+            function showContent(id) {
+                const tabs = document.getElementsByClassName('tab');
+                for (let i = 0; i < tabs.length; i++) {
+                    tabs[i].style.backgroundColor = '#f2f2f2';
+                }
+                const tab = document.getElementById(id + '-tab');
+                tab.style.backgroundColor = '#ddd';
+                
+                const contents = document.getElementsByClassName('content');
+                for (let i = 0; i < contents.length; i++) {
+                    contents[i].style.display = 'none';
+                }
+                const content = document.getElementById(id + '-content');
+                content.style.display = 'block';
+
+                if(id == 'home'){
+                    document.getElementById('home-tab').click();
+                }
+            }
+        </script>
+       </body>
+</html>
