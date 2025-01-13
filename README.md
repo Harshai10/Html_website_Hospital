@@ -1,4 +1,5 @@
-As a hobby i have created a simple website for a hospital use case which enables the patients to get information as well as make an appointment infeature a chat option can be embedded
+I have created a simple website for a hospital to check out its History and achievements, departments present, and make an appointment if necessary.
+also added a contact bar if any inconvenience occurs.
 
 sample website screenshots
 
