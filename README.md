@@ -2,9 +2,13 @@ As a hobby i have created a simple website for a hospital use case which enables
 
 sample website screenshots
 
-![image](https://github.com/Harshai10/Html_website_Hospital/assets/97380737/bd303068-32c1-44df-afac-264f693d1901)
+![Screenshot 2025-01-13 160725](https://github.com/user-attachments/assets/c925f9c4-746a-4226-a1a9-ce81b06e3a7d)
 
 
-![image](https://github.com/Harshai10/Html_website_Hospital/assets/97380737/aa150d4d-1ab6-49de-a6c2-d4ae5cde54f1)
 
+![Screenshot 2025-01-13 161039](https://github.com/user-attachments/assets/150c89a1-52a5-4b57-a15c-ca0ed845dd1a)
 
+![Screenshot 2025-01-13 161103](https://github.com/user-attachments/assets/335d6f74-1f4f-41e9-b3b5-b894ac60e2e3)
+![Screenshot 2025-01-13 161116](https://github.com/user-attachments/assets/8f152d15-4562-40f0-80c4-a1a4eb403924)
+![Screenshot 2025-01-13 161126](https://github.com/user-attachments/assets/0d81fce7-0ccc-47f7-8020-164e4e11d122)
+![Screenshot 2025-01-13 161137](https://github.com/user-attachments/assets/9a08d1de-4a54-402c-9cb6-cef692f0c665)
