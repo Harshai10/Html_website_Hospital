@@ -1,5 +1,7 @@
-I have created a simple website for a hospital to check out its History and achievements, departments present, and make an appointment if necessary.
-also added a contact bar if any inconvenience occurs.
+I have designed and developed a feature-rich website for the Marvel Institute of Medical Sciences (MIMS), enabling patients to access comprehensive healthcare information and book appointments online. Leveraged modern web technologies, including Bootstrap and custom styling, to create a responsive, user-friendly interface. This project also incorporates a potential for future integration of interactive features, such as real-time chat support, enhancing patient engagement and experience.
+
+
+
 
 sample website screenshots
 
