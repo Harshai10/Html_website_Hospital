@@ -1,345 +1,710 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <script>alert("Welcome to MIMS");</script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <style>
-            body{
-            margin: 0;
-            padding: 0;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIMS - Marvel Institute of Medical Sciences</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #2c3e50;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            scroll-behavior: smooth;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
             position: relative;
         }
-            * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            }
-        .container {
-            width: 350px;
-            background-color: #f2cfcf;
-            padding: 30px;
-            margin: 100px auto;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .title {
-            text-align: center;
-            margin-bottom: 20px;
-            color: brown;
-        }
-        .description {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #333;
-            font-size: 14px;
-        }.form {
-            width: 100%;
-        }
 
-        .input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        .form {
-            display: flex;
-            flex-direction: column;
-        }
-        .submit-button{
-            background-color: brown;
-            color: yellow;
-            border: 2px;
-            border-radius: 5px;
-            padding:10px 20px;
-            font-size: 14px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .sign-up-button:hover {
-            background-color:brown;
-        }
-        .info {
-            font-size: 12px;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        .terms {
-            font-size: 12px;
-            color: #4267b2;
-            text-align: center;
-            margin-top: 20px;
-        }
-        h1,h2{color: black;
-            text-align: center;
-        }
-        h1.custim-h1{
-            font-size: 56px;
-        }
-
-        h1
-        ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-                 overflow:	hidden;
-        background-color: #f2cfcf;
-        }
-        li {
-                 float:	left;
-        }
-        li a {
-        display: block;
-        color: orange;
-        padding: 12px 15px;
-        }
-        li a:hover {
-        background-color: black;
-        }
-        label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        input[type="date"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-        }
-        
-        .doctor-dropdown {
-            width: 100%;
-            height: 100%;
-            padding:10px 20px;
-            border: 1px solid black;
-            font-size: 10px;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            background-color: white;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Style for the dropdown arrow */
-        .doctor-dropdown select {
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-color: brown;
-            
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            background: url('arrow-down.png') no-repeat right center;
-            padding-right: 10px; /* Add space for the arrow */
-        }
-        .doctor-dropdown-container {
-            display: flex;
-            align-items: center;
-            }
-
-        .doctor-dropdown {
-            flex: 1;
-            display: flex;
-            align-items: center;
-         }
-         .tabs {
-			display: flex;
-			border: 1px solid white;
-			border-bottom: none;
-		}
-		
-		.tab {
-			flex: 1;
-			padding: 10px;
-			text-align: center;
-			background-color:#f2cfcf;
-			cursor: pointer;
-		}
-		
-		.tab:hover {
-			background-color: white;
-		}
-		
-		.content {
-			display: none;
-			padding: 20px;
-			border: 1px solid #ccc;
-			border-top: none;
-		}
-		
-		#about-us-content {
-			display: block;
-		}
-        
-        #background-image{
-            background-image: url('https://plus.unsplash.com/premium_photo-1675686363504-ba2df7786f16?q=80&w=1791&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center center;
-            background-attachment: fixed;
-            position: fixed;
-            top: 0;
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            z-index: -1;
-            opacity: 0.45;
+            height: 100px;
+            background: linear-gradient(to top, var(--light-bg), transparent);
         }
 
-        </style>
-       </head>
-       <body>
-        <div id = "background-image"></div>
-        
-        <h1 class="custim-h1"><a href ="file:///D:/myproject/Webdevelopment/MIMS.html">MIMS</a></h1>
-        <h2>Marvel Institute of Medical Sciences</h2>
-        <br><br>
-        <ul id="sectionTabs">
-         
-        <div class="tabs">
-            <li><a id = "home-tab" class="active" href="file:///D:/myproject/Webdevelopment/MIMS.html" onclick="window.location.reload();">Home</a></li>
-            <div id="about-us-tab" class="tab" onclick="showContent('about-us')">About Us</div>
-            <div id="department-tab" class="tab" onclick="showContent('department')">Department</div>
-            <div id="facilities-tab" class="tab" onclick="showContent('facilities')">Facilities</div>
-            <div id="locations-tab" class="tab" onclick="showContent('locations')">Locations</div>
-            <div id="contacts-tab" class="tab" onclick="showContent('contacts')">Contacts</div>
-            <div id="services-tab" class="tab" onclick="showContent('services')">Services</div>
-        </div>
-        
-            <div id="about-us-content" class="content">
-                
-                <h4>MIIMS was created in 1956 to serve as a nucleus for nurturing excellence in all aspects of health care</h4>
-                <p>
-                    Creating a country imbued with a scientific culture was Jawaharlal Nehru's dream, and immediately after independence he prepared a grand design to achieve it. Among the temples of modern India which he designed, was a centre of excellence in the medical sciences. Nehru's dream was that such a centre would set the pace for medical education and research in Southeast Asia , and in this he had the wholehearted support of his Health Minister, Rajkumari Amrit Kaur.
-                    
-                    The health survey and development committee ,chaired by Sir Joseph Bhore, an Indian Civil Servant ,had in 1946 already recommended the establishment of a national medical centre which would concentrate on meeting the need for highly qualified manpower to look after the nation's expanding health care activities . The dreams of Nehru and Amrit Kaur and the recommendations of the Bhore Committee converged to create a proposal which found favor with the government of New Zealand. A generous grant from New Zealand under the Colombo Plan made it possible to lay the foundation stone of Marval Institute of Medical Sciences (MIMS) in 1952.The MIMS was finally created in 1956,as an autonomous institution through an Act of Parliament ,to serve as a nucleus for nurturing excellence in all aspect of health care.</p>
-            </div>
-            
-            <div id="department-content" class="content">
-                <h2>Department</h2>
-                <h4>Anaesthesiology, Pain Medicine and Critical Care<br> Anatomy <br> Academic Section<br>Biochemistry <br>Biomedical Engineering <br>Biotechnology <br> Cardiology <br> Cardiothoracic & Vascular Surgery (CTVS) <br>College of Nursing <br> Dermatology & Venereology <br> Endocrinology, Metabolism & Diabetes</h4>
-            </div>
-            
-            <div id="facilities-content" class="content">
-                <h2>Facilities</h2>
-                <p>AC Suite rooms<br>
-                    General warden<br>
-                    Health Checkup<br>
-                    Food & Dietary Services<br>
-                    Special General Ward<br>
-                    Special Nurse<br>
-                    Travel Desk<br>
-                    24x7 Ambulance services<br>
-                    Guest Lounge<br>
-                    Hygiene canteen<br>
-                    ATM service<br>
-                    Babycare center<br>
-                    Visitor restrooms</p>
-            </div>
-            <div id="locations-content" class="content">
-                <h2>Locations</h2>
-                <p>Delhi <br> Chennai <br>Hyderabad <br> Mumbai <br> Bhubaneshwar</p>
-            </div>
-            
-            <div id="contacts-content" class="content">
-                <h2>Contacts</h2>
-                <p><u>MIMS@gmail.com</u> <br> 123456789 <br> 678901234 </p>
-            </div>
-            
-            <div id="services-content" class="content">
-                <h2><u>Our Patient Care</u></h2>
-                <p>Medicine Out-patient Department (Location: A & B Wing, 2nd floor, New Rajkumari OPD block)<br>
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
 
-                    Unit 1 - Monday and Thursday<br>
-                    
-                    Unit 2 - Tuesday and Friday<br>
-                    
-                    Unit 3 - Wednesday and Saturday<br>
-                    
-                    Registration timing: 8:30am-11:00am<br>
-                    
-                    How to Book OPD Appointment<br>
-                    
-                    If you are a new patient- <u><b>Check book for appointment below</b></u><br>
-                    
-                    Special Clinics (Location - A and B wing , 2nd Floor New RAK OPD)<br>
-                    
-                     
-                    
-                    Infectious Disease travel health and adult immunization Clinic - Every Monday and Thursday (2:00PM)<br>
-                    
-                    Sleep Clinic - Every Monday (2:00 PM)<br>
-                    
-                    Obesity and Metabolic Clinic - Every Wednesday (2:00PM)<br>
-                    
-                    Chest clinic - Every Friday (2:00PM)<br>
-                    
-                    Registration time (2:00PM to 3:00PM)</p>
-            </div>
-                 
-        </ul>
-        
-        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .features {
+            padding: 3rem 0;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .appointment-form {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-control {
+            margin-bottom: 1.5rem;
+            padding: 0.75rem;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .stats {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .stat-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .social-links {
+            font-size: 1.5rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin-right: 1rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+        }
+
+        .content-section {
+            padding: 5rem 0;
+            background: white;
+            border-radius: 8px;
+            margin: 3rem 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .department-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .department-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .about-stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .about-stat-item h3 {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        #departments {
+            margin-top: 6rem;
+            background-color: var(--light-bg);
+        }
+
+        .about-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-content {
+            padding: 2rem;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about-highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            background: var(--light-bg);
+            transition: transform 0.3s ease;
+        }
+
+        .about-feature:hover {
+            transform: translateX(10px);
+        }
+
+        .about-feature i {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-right: 1rem;
+        }
+
+        .about-feature-text {
+            flex: 1;
+        }
+
+        .about-feature-text h4 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .about-feature-text p {
+            margin: 0.5rem 0 0;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .about-stats {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .about-stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .about-stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .about-stat-item h3 {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .about-stat-item p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <h1 class="title">Book an appointment</h1>
-           
-            <form class="form">
-                
-                <input class="input" type="text" placeholder="Patient's Name">
-                <input class="input" type="text" placeholder="Contact number">
-                <div class="doctor-dropdown-container">
-                    <div class="doctor-dropdown">
-                        <label for="doctors">Select a doctor:</label>
-                        <select id="doctors" name="doctors">
-                            <option value="Dr.Subash gupta">Dr.Subash gupta</option>
-                            <option value="Dr.YK Mishra">Dr.YK Mishra</option>
-                            <option value="Dr.Aditya Gupta">Dr.Aditya Gupta</option>
-                            <option value="Dr.Naresh Trehan">Dr.Naresh Trehan</option>
-                            <option value="Dr.Sudhir Tyagi">Dr.Sudhir Tyagi</option>
-                            <option value="Dr.H.S.Chhabra">Dr.H.S.Chhabra</option>
-                        </select>
+            <a class="navbar-brand" href="#home">MIMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#departments">Departments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero" id="home">
+        <div class="container">
+            <h1>Marvel Institute of Medical Sciences</h1>
+            <p class="lead">Excellence in Healthcare Since 1956</p>
+            <a href="#appointment" class="btn btn-primary btn-lg mt-3">Book Appointment</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="features">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-user-md feature-icon"></i>
+                        <h3>Expert Doctors</h3>
+                        <p>Our team of experienced healthcare professionals is dedicated to providing the best care.</p>
                     </div>
                 </div>
-                <label for="dateInput">Select a Date:</label>
-                <input type="date" id="Available slot">
-                <br>
-                <button class="submit-button">submit</button>
-                <br>
-                <div class="policy-text">
-                    By submitting, you agree to our <a href="#">Terms</a>, <a href="#">Privacy Policy</a>.
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-hospital feature-icon"></i>
+                        <h3>Modern Facilities</h3>
+                        <p>State-of-the-art medical facilities equipped with the latest technology.</p>
+                    </div>
                 </div>
-            </form>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-ambulance feature-icon"></i>
+                        <h3>24/7 Emergency</h3>
+                        <p>Round-the-clock emergency services for immediate medical attention.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <script>
-            function showContent(id) {
-                const tabs = document.getElementsByClassName('tab');
-                for (let i = 0; i < tabs.length; i++) {
-                    tabs[i].style.backgroundColor = '#f2f2f2';
-                }
-                const tab = document.getElementById(id + '-tab');
-                tab.style.backgroundColor = '#ddd';
-                
-                const contents = document.getElementsByClassName('content');
-                for (let i = 0; i < contents.length; i++) {
-                    contents[i].style.display = 'none';
-                }
-                const content = document.getElementById(id + '-content');
-                content.style.display = 'block';
+        <section id="about" class="content-section about-section">
+            <div class="container">
+                <h2 class="text-center section-title">About Us</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="about-content">
+                            <p class="about-text">Welcome to <span class="about-highlight">Marvel Institute of Medical Sciences (MIMS)</span>, where excellence meets compassion in healthcare. Since our establishment in 1956, we have been at the forefront of medical innovation and patient care.</p>
+                            
+                            <p class="about-text">Our journey began with a vision to create a healthcare institution that would set new standards in medical excellence. Today, we stand proud as one of the leading medical institutions, combining cutting-edge technology with compassionate care.</p>
 
-                if(id == 'home'){
-                    document.getElementById('home-tab').click();
+                            <div class="about-feature">
+                                <i class="fas fa-user-md"></i>
+                                <div class="about-feature-text">
+                                    <h4>Expert Medical Team</h4>
+                                    <p>Our team of renowned specialists and healthcare professionals brings decades of experience in various medical disciplines.</p>
+                                </div>
+                            </div>
+
+                            <div class="about-feature">
+                                <i class="fas fa-microscope"></i>
+                                <div class="about-feature-text">
+                                    <h4>Advanced Technology</h4>
+                                    <p>We invest in the latest medical technology and equipment to ensure accurate diagnosis and effective treatment.</p>
+                                </div>
+                            </div>
+
+                            <div class="about-feature">
+                                <i class="fas fa-heart"></i>
+                                <div class="about-feature-text">
+                                    <h4>Patient-Centered Care</h4>
+                                    <p>Our approach focuses on providing personalized care that addresses both medical needs and emotional well-being.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="about-stats">
+                            <div class="row">
+                                <div class="col-6 mb-4">
+                                    <div class="about-stat-item">
+                                        <h3>1956</h3>
+                                        <p>Year Established</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-4">
+                                    <div class="about-stat-item">
+                                        <h3>24/7</h3>
+                                        <p>Emergency Care</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="about-stat-item">
+                                        <h3>500+</h3>
+                                        <p>Hospital Beds</p>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="about-stat-item">
+                                        <h3>50+</h3>
+                                        <p>Specialties</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-4">
+                                <p class="mb-0" style="opacity: 0.9">Trusted by millions of patients for over six decades</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="departments" class="content-section">
+            <h2 class="text-center section-title">Our Departments</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="department-card">
+                        <i class="fas fa-heart feature-icon"></i>
+                        <h3>Cardiology</h3>
+                        <p>Comprehensive cardiac care with state-of-the-art facilities and experienced cardiologists.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="department-card">
+                        <i class="fas fa-brain feature-icon"></i>
+                        <h3>Neurology</h3>
+                        <p>Expert neurological care with advanced diagnostic and treatment facilities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="department-card">
+                        <i class="fas fa-bone feature-icon"></i>
+                        <h3>Orthopedics</h3>
+                        <p>Specialized care for bone, joint, and muscle conditions with modern treatment approaches.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="department-card">
+                        <i class="fas fa-baby feature-icon"></i>
+                        <h3>Pediatrics</h3>
+                        <p>Dedicated child healthcare with a team of experienced pediatricians.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="department-card">
+                        <i class="fas fa-stethoscope feature-icon"></i>
+                        <h3>Internal Medicine</h3>
+                        <p>Comprehensive care for various medical conditions with a holistic approach.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="department-card">
+                        <i class="fas fa-procedures feature-icon"></i>
+                        <h3>Surgery</h3>
+                        <p>Advanced surgical procedures with minimally invasive techniques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="stats">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-text">Specialist Doctors</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">10k+</div>
+                        <div class="stat-text">Happy Patients</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-text">Departments</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-text">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="appointment-form" id="appointment">
+            <h2 class="text-center mb-4">Book an Appointment</h2>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Full Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="email" class="form-control" placeholder="Email Address" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="tel" class="form-control" placeholder="Phone Number" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="date" class="form-control" required>
+                    </div>
+                </div>
+                <select class="form-control" required>
+                    <option value="">Select Department</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="neurology">Neurology</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="pediatrics">Pediatrics</option>
+                </select>
+                <textarea class="form-control" rows="3" placeholder="Additional Notes"></textarea>
+                <button type="submit" class="btn btn-primary w-100">Book Appointment</button>
+            </form>
+        </div>
+    </div>
+
+    <section id="contact" class="content-section bg-light">
+        <h2 class="text-center section-title">Contact Us</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p><i class="fas fa-phone me-2"></i> +1 234 567 890</p>
+                        <p><i class="fas fa-envelope me-2"></i> info@mims.com</p>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 123 Healthcare Street, Medical City</p>
+                        <div class="social-links mt-4">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>About MIMS</h4>
+                    <p>Providing world-class healthcare services with compassion and care since 1956.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#departments">Departments</a></li>
+                        <li><a href="#doctors">Doctors</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope"></i> info@mims.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Healthcare Street, Medical City</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
-            }
-        </script>
-       </body>
+            });
+        });
+
+        // Add active class to nav items on scroll
+        window.addEventListener('scroll', function() {
+            let scrollPosition = window.scrollY;
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    const currentId = section.getAttribute('id');
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${currentId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
